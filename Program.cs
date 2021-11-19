@@ -7,7 +7,8 @@ namespace StoryLine
         public static void Main(string[] args)
         {
             Story story = new Story();
-            story.Prolog();            
+            
+            story.Start();            
         }
     }
 }

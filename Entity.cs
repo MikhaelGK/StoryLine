@@ -1,6 +1,10 @@
 using System;
 
+<<<<<<< HEAD
 namespace Story
+=======
+namespace StoryLine
+>>>>>>> ceedeb8890746a04590b968b01f463d245a97e0e
 {
     public class Entity
     {
