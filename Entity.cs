@@ -1,6 +1,6 @@
 using System;
 
-namespace Entity
+namespace StoryLine
 {
     public class Entity
     {
