@@ -2,11 +2,12 @@
 
 namespace StoryLine
 {
-    public class StoryLine
+    public class Program
     {
-        public void Main(string[] args)
+        public static void Main(string[] args)
         {
-            
+            Story story = new Story();
+            story.Prolog();            
         }
     }
 }
