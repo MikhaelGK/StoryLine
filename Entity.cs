@@ -1,6 +1,6 @@
 using System;
 
-namespace Entity
+namespace Story
 {
     public class Entity
     {
