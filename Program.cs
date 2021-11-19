@@ -8,8 +8,7 @@ namespace StoryLine
         {
             Story story = new Story();
 
-            story.Start();  
-                      
+            story.Start();                        
         }
     }
 }
