@@ -8,5 +8,6 @@ namespace StoryLine
         public string Skill { get; set; }
         public string Weapon { get; set; }
         public string Inventory { get; set; }
+        public int Armor { get; set; }
     }
 }
