@@ -5,6 +5,5 @@ namespace  Story
     public class Player : Entity
     {
     
-
     }
 }
