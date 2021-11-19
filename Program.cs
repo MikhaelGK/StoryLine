@@ -7,8 +7,9 @@ namespace StoryLine
         public static void Main(string[] args)
         {
             Story story = new Story();
-            
-            story.Start();            
+
+            story.Start();  
+                      
         }
     }
 }
