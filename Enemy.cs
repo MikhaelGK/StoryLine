@@ -12,7 +12,8 @@ namespace StoryLine
         public void RoyaleMinion()
         {
             Health = 500;
-            Skill = "Fair Ball";            
+            Skill = "Fire Ball";            
+            
         }
         public void Goblin()
         {

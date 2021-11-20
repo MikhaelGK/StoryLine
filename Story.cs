@@ -38,6 +38,8 @@ namespace StoryLine
             var name = Console.ReadLine();
             if(name == null)
                 Main();
+            else if(name == "")
+                Main();
             else
             {
                 Player player = new Player(name);  
