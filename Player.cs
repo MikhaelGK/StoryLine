@@ -10,7 +10,6 @@ namespace StoryLine
         {
             _name = name;
             Health = 100;    
-            
         }
     }
 }
