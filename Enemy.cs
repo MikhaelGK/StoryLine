@@ -13,6 +13,7 @@ namespace StoryLine
         {
             Health = 500;
             Skill = "Fire Ball";            
+            
         }
         public void Goblin()
         {

@@ -19,7 +19,7 @@ namespace StoryLine
         {
             Console.Clear();
             System.Console.WriteLine("One day, there was a mountain called Mount Sirius which there were many treasures, but there is a dragon guarding the mountain");
-            System.Console.WriteLine("          Many warrior have try to get the treasure, but they never come back after go to that mountain");
+            System.Console.WriteLine("          Many warrior have try to get the treasure, but they never come back after go to the mountain");
             System.Console.WriteLine();
             Console.ReadKey();            
             System.Console.WriteLine("            You are a very poor person who has been frustrated. One day, you hear about Mount Sirius.");
@@ -37,6 +37,8 @@ namespace StoryLine
             System.Console.Write("         Enter Your Name : ");            
             var name = Console.ReadLine();
             if(name == null)
+                Main();
+            else if(name == "")
                 Main();
             else
             {
@@ -69,7 +71,7 @@ namespace StoryLine
                 Console.ReadKey();
                 System.Console.WriteLine("Old Man : Never be greedy");
                 Console.ReadKey();
-                System.Console.WriteLine("You     : What do you mean? You said that is the clue?");
+                System.Console.WriteLine("You     : What do you mean? You said that is a clue?");
                 Console.ReadKey();
                 System.Console.WriteLine("Old Man : you'll know what I mean soon");
                 Console.ReadKey();
@@ -77,7 +79,24 @@ namespace StoryLine
             if(yourChoice == 2)
             {
                 System.Console.WriteLine();
-                System.Console.WriteLine("Old Man : ");
+                System.Console.WriteLine("Old Man : There is a mountain that called Mount Sirius which there were many treasure and there is a dragon guarding the mountain");
+                Console.ReadKey();
+                System.Console.WriteLine("Old Man : Many warrior have try to the treasure, but they never come back after go to the mountain");
+                Console.ReadKey();
+                System.Console.WriteLine("Old Man : So, What do you think about Mount Sirius?");
+                Console.ReadKey();
+                System.Console.WriteLine("You     : Very Interesting");     
+                Console.ReadKey();            
+                System.Console.WriteLine("Old Man : I will give you some pointers if you want to go there");
+                Console.ReadKey();
+                System.Console.WriteLine("You     : What is the pointers?");
+                Console.ReadKey();
+                System.Console.WriteLine("Old Man : Never be greedy");
+                Console.ReadKey();
+                System.Console.WriteLine("You     : What do you mean? You said that is a clue?");
+                Console.ReadKey();
+                System.Console.WriteLine("Old Man : you'll know what I mean soon");
+                Console.ReadKey();                          
             }
         }
     }   
