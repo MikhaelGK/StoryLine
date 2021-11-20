@@ -9,13 +9,7 @@ namespace StoryLine
         public Player(string name)
         {
             _name = name;
-            Health = 100;                
-        }
-
-        public Player(string name, int armor)
-        {
-            _name = name;
-            Armor = armor;
-        }
+            Health = 100;                    
+        }        
     }
 }

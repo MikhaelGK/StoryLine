@@ -59,7 +59,7 @@ namespace StoryLine
             System.Console.WriteLine();
             System.Console.WriteLine("1. I have heard about it");
             System.Console.WriteLine("2. No, I never heard of it");
-            System.Console.WriteLine();
+            System.Console.Write("");
             var yourChoice = Convert.ToInt32(Console.ReadLine());
             Console.Clear();
             if(yourChoice == 1)
@@ -104,7 +104,35 @@ namespace StoryLine
 
         public void PrepareToGoToTheMountain(Player player)
         {
-            
+            Console.Clear();
+            System.Console.WriteLine("Go Home");
+            Console.ReadKey();
+            System.Console.WriteLine("                  When you're at home, you prepare your equipment to go to Mount Sirius");
+            System.Console.WriteLine("                            Once you are ready, you see the knife and the bow");
+            System.Console.WriteLine();
+            System.Console.WriteLine("1. Pick up the knife");
+            System.Console.WriteLine("2. Pick up the bow");            
+            System.Console.Write("");
+            var yourChoice = Convert.ToInt32(Console.ReadLine());            
+            if(yourChoice == 1)
+            {
+                player.Weapon = "Knife";                                                                
+                System.Console.WriteLine($"                               You pick the {player.Weapon}");
+                Console.ReadKey();
+                GoToTheForest(player);
+            }
+            if(yourChoice == 2)
+            {
+                player.Weapon = "Bow";
+                System.Console.WriteLine($"                               You pick the {player.Weapon}");
+                Console.ReadKey();
+                GoToTheForest(player);
+            }            
+        }
+
+        public void GoToTheForest(Player player)
+        {
+
         }
     }   
 }
