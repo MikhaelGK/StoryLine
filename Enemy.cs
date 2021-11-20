@@ -23,7 +23,7 @@ namespace StoryLine
         public void Wugiwugi()
         {
             Health = 500;
-            Skill = "Eat people";            
+            Skill = "Eat human";            
         }        
     }
 }
