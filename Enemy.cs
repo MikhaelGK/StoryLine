@@ -18,6 +18,11 @@ namespace StoryLine
         {
             Health = 500;
             Skill = "Thief";            
+        } 
+        public void Wugiwugi()
+        {
+            Health = 500;
+            Skill = "Eat people";            
         }        
     }
 }
