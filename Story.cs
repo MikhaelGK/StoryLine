@@ -181,6 +181,16 @@ namespace StoryLine
         public void AfterDefeatWugiWugi(Enemy huggywuggy, Player player)
         {
             Console.Clear();
+            System.Console.WriteLine();
+            System.Console.WriteLine("                                             You continue your journey to Mount Sirius. Suddenly, you find poison on the road you walk.");
+             System.Console.WriteLine();
+            System.Console.WriteLine("                                             You continue your journey to Mount Sirius. Suddenly, you find poison on the road you walk.");
         }                
+        public void Continue()
+        {
+            System.Console.WriteLine();
+            System.Console.WriteLine("                                              Press Enter to Continue");
+            Console.ReadKey();
+        }
     }   
 }
