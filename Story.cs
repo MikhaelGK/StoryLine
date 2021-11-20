@@ -49,7 +49,7 @@ namespace StoryLine
 
         public void StoryAfterPlayerName(Player player)
         {
-            var name = player._name;
+            var name = player.Name;
 
             System.Console.WriteLine();            
             System.Console.WriteLine($"Old Man : {name}?? It's a beautiful name");
@@ -60,7 +60,12 @@ namespace StoryLine
             System.Console.WriteLine("1. I have heard about it");
             System.Console.WriteLine("2. No, I never heard of it");
             System.Console.Write("");
-            var yourChoice = Convert.ToInt32(Console.ReadLine());
+            var stringNull = Console.ReadLine();
+            if(stringNull == "")
+            {
+                StoryAfterPlayerName(player);
+            }
+            var yourChoice = Convert.ToInt32(stringNull);
             Console.Clear();
             if(yourChoice == 1)
             {
@@ -110,6 +115,7 @@ namespace StoryLine
             System.Console.WriteLine("                  When you're at home, you prepare your equipment to go to Mount Sirius");
             System.Console.WriteLine("                            Once you are ready, you see the knife and the bow");
             System.Console.WriteLine();
+            Console.ReadKey();
             System.Console.WriteLine("1. Pick up the knife");
             System.Console.WriteLine("2. Pick up the bow");            
             System.Console.Write("");
@@ -118,6 +124,7 @@ namespace StoryLine
             {
                 player.Weapon = "Knife";                                                                
                 System.Console.WriteLine($"                               You pick the {player.Weapon}");
+                player.Damage = 10;
                 Console.ReadKey();
                 GoToTheForest(player);
             }
@@ -125,6 +132,7 @@ namespace StoryLine
             {
                 player.Weapon = "Bow";
                 System.Console.WriteLine($"                               You pick the {player.Weapon}");
+                player.Damage = 15;
                 Console.ReadKey();
                 GoToTheForest(player);
             }            
@@ -132,7 +140,37 @@ namespace StoryLine
 
         public void GoToTheForest(Player player)
         {
+            Enemy wugiwugi = new Enemy("Wugi-Wugi", 100, "Every hit human will increase his damage by 1", "Wooden Sword", 7);                        
 
+            Console.Clear();
+            System.Console.WriteLine("Arendelle Forest");
+            System.Console.WriteLine();
+            System.Console.WriteLine("      When you are in the forest, you meet a wugi-wugi");
+            System.Console.WriteLine();
+            Console.ReadKey();
+            System.Console.WriteLine("Wugi-Wugi : (laugh) ekk.. ekh.. ");
+            Console.ReadKey();
+            System.Console.WriteLine("You       : Who the hell are you?");
+            Console.ReadKey();
+            System.Console.WriteLine("Wugi-Wugi : I'm Wugi-Wugi");
+            Console.ReadKey();
+            System.Console.WriteLine("Wugi-Wugi : It's a long time no see human in this forest");
+            Console.ReadKey();
+            System.Console.WriteLine("Wugi-Wugi : Have you ready to died in here? (laugh)");
+            Console.ReadKey();
+            System.Console.WriteLine();
+            System.Console.WriteLine("Your Mision : Defeated Wugi-Wugi");            
+            System.Console.WriteLine("Wugi-Wugi :");
+            System.Console.WriteLine($"   The damage dealt is {wugiwugi.Damage}");
+            System.Console.WriteLine($"   {wugiwugi.Skill}");
+            
+            FightWithWugiWugi Fight = new FightWithWugiWugi();
+            Fight.FightWugiWugi(wugiwugi, player);
         }
+
+        public void AfterDefeatWugiWugi(Enemy wugiwugi, Player player)
+        {
+            Console.Clear();
+        }                
     }   
 }
