@@ -3,27 +3,15 @@ using System;
 namespace StoryLine
 {
     public class Enemy : Entity
-    {
-        public void Dragon()
+    {        
+        public Enemy(string name, int health, string skill, string weapon, int damage)
         {
-            Health = 20000;
-            Skill = "Dragon Breath";            
+            Name = name;
+            Health = health;
+            Skill = skill;
+            Weapon = weapon;
+            Damage = damage;
+
         }
-        public void RoyaleMinion()
-        {
-            Health = 500;
-            Skill = "Fire Ball";            
-            
-        }
-        public void Goblin()
-        {
-            Health = 500;
-            Skill = "Thief";            
-        } 
-        public void Wugiwugi()
-        {
-            Health = 500;
-            Skill = "Eat human";            
-        }        
     }
 }

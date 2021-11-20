@@ -8,9 +8,9 @@ namespace StoryLine
         {
             Console.Clear();
             System.Console.WriteLine();
-            System.Console.WriteLine(" Welcome To StoryLine");
+            System.Console.WriteLine("                                              Welcome To StoryLine");
             System.Console.WriteLine();
-            System.Console.WriteLine("Press Start To Continue");
+            System.Console.WriteLine("                                             Press Start To Continue");
             Console.ReadKey();
             Prolog();            
         }
@@ -49,9 +49,11 @@ namespace StoryLine
 
         public void StoryAfterPlayerName(Player player)
         {
-            var name = player._name;
+            var name = player.Name;
+            RepeatStory repeat = new RepeatStory();
 
-            System.Console.WriteLine();            
+            Console.Clear();   
+            System.Console.WriteLine();
             System.Console.WriteLine($"Old Man : {name}?? It's a beautiful name");
             Console.ReadKey();
             System.Console.WriteLine($"Old Man : Have you ever heard about Mount Sirius?");
@@ -60,8 +62,13 @@ namespace StoryLine
             System.Console.WriteLine("1. I have heard about it");
             System.Console.WriteLine("2. No, I never heard of it");
             System.Console.Write("");
-            var yourChoice = Convert.ToInt32(Console.ReadLine());
-            Console.Clear();
+            var stringNull = Console.ReadLine();
+            while(stringNull == "" || stringNull != "2" && stringNull != "1")
+            {
+                stringNull = repeat.StoryAfterPlayerName(player);
+            }            
+            Console.Clear();                    
+            var yourChoice = Convert.ToInt32(stringNull);
             if(yourChoice == 1)
             {
                 System.Console.WriteLine();
@@ -104,20 +111,29 @@ namespace StoryLine
 
         public void PrepareToGoToTheMountain(Player player)
         {
+            RepeatStory repeat = new RepeatStory();
             Console.Clear();
-            System.Console.WriteLine("Go Home");
+            System.Console.WriteLine("Your Home");
             Console.ReadKey();
             System.Console.WriteLine("                  When you're at home, you prepare your equipment to go to Mount Sirius");
             System.Console.WriteLine("                            Once you are ready, you see the knife and the bow");
             System.Console.WriteLine();
+            Console.ReadKey();
             System.Console.WriteLine("1. Pick up the knife");
             System.Console.WriteLine("2. Pick up the bow");            
             System.Console.Write("");
-            var yourChoice = Convert.ToInt32(Console.ReadLine());            
+            var stringNull = Console.ReadLine();
+            while(stringNull == "" || stringNull != "2" && stringNull != "1")
+            {
+                stringNull = repeat.PrepareToGoToTheMountain(player);
+            }
+            var yourChoice = Convert.ToInt32(stringNull);                   
+            yourChoice = Convert.ToInt32(stringNull);
             if(yourChoice == 1)
             {
                 player.Weapon = "Knife";                                                                
                 System.Console.WriteLine($"                               You pick the {player.Weapon}");
+                player.Damage = 10;
                 Console.ReadKey();
                 GoToTheForest(player);
             }
@@ -125,6 +141,7 @@ namespace StoryLine
             {
                 player.Weapon = "Bow";
                 System.Console.WriteLine($"                               You pick the {player.Weapon}");
+                player.Damage = 15;
                 Console.ReadKey();
                 GoToTheForest(player);
             }            
@@ -132,7 +149,38 @@ namespace StoryLine
 
         public void GoToTheForest(Player player)
         {
+            Enemy huggywuggy = new Enemy("Huggy-Wuggy", 100, "Every hit human will increase his damage by 1", "Wooden Sword", 4);                        
 
+            Console.Clear();
+            System.Console.WriteLine("Arendelle Forest");
+            System.Console.WriteLine();
+            System.Console.WriteLine("      When you are in the forest, you meet a wugi-wugi");
+            System.Console.WriteLine();
+            Console.ReadKey();
+            System.Console.WriteLine("Huggy Wuggy : (laugh) ekk.. ekh.. ");
+            Console.ReadKey();
+            System.Console.WriteLine("You       : Who the hell are you?");
+            Console.ReadKey();
+            System.Console.WriteLine("Huggy Wuggy : I'm Huggy Wuggy");
+            Console.ReadKey();
+            System.Console.WriteLine("Huggy Wuggy : It's a long time no see human in this forest");
+            Console.ReadKey();
+            System.Console.WriteLine("Huggy Wuggy : Have you ready to died in here? (laugh)");
+            Console.ReadKey();
+            System.Console.WriteLine();
+            System.Console.WriteLine("Your Mision : Defeated Huggy Wuggy");            
+            System.Console.WriteLine("Huggy Wuggy :");
+            System.Console.WriteLine($"   Damage dealt : {huggywuggy.Damage}");
+            System.Console.WriteLine($"   Skill : {huggywuggy.Skill}");
+            Console.ReadKey();
+
+            FightWithHuggyWuggy Fight = new FightWithHuggyWuggy();
+            Fight.FightWugiWugi(huggywuggy, player);
         }
+
+        public void AfterDefeatWugiWugi(Enemy huggywuggy, Player player)
+        {
+            Console.Clear();
+        }                
     }   
 }
