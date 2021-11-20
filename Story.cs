@@ -75,6 +75,7 @@ namespace StoryLine
                 Console.ReadKey();
                 System.Console.WriteLine("Old Man : you'll know what I mean soon");
                 Console.ReadKey();
+                PrepareToGoToTheMountain(player);
             }
             if(yourChoice == 2)
             {
@@ -96,8 +97,14 @@ namespace StoryLine
                 System.Console.WriteLine("You     : What do you mean? You said that is a clue?");
                 Console.ReadKey();
                 System.Console.WriteLine("Old Man : you'll know what I mean soon");
-                Console.ReadKey();                          
+                Console.ReadKey();           
+                PrepareToGoToTheMountain(player);
             }
+        }
+
+        public void PrepareToGoToTheMountain(Player player)
+        {
+            
         }
     }   
 }
