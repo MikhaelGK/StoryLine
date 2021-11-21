@@ -183,6 +183,6 @@ namespace StoryLine
             Console.Clear();
             Console.WriteLine("You Have Defeated Huggy Wuggy");           
             Console.ReadKey();
-        }                
+        }                        
     }   
 }
