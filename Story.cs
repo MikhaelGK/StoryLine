@@ -181,8 +181,14 @@ namespace StoryLine
         public void AfterDefeatWugiWugi(Enemy huggywuggy, Player player)
         {
             Console.Clear();
-            Console.WriteLine("You Have Defeated Huggy Wuggy");           
+            Console.WriteLine("Huggy Wuggy : What happened to me? I was defeated by you?");
             Console.ReadKey();
+            Console.WriteLine("Huggy Wuggy : I'm Huggy Wuggy. Why an ordinary human like you beat can me?");
+            Console.ReadKey();            
+            Console.Clear();
+            System.Console.WriteLine();
+            System.Console.WriteLine("                                  Huggy Wuggy has died...");
+            System.Console.WriteLine("             Suddenly, Your body emits light and evolves to form new skills ");                    
         }                        
     }   
 }
