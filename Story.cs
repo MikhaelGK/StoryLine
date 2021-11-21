@@ -175,7 +175,7 @@ namespace StoryLine
             Console.ReadKey();
 
             FightWithHuggyWuggy Fight = new FightWithHuggyWuggy();
-            Fight.FightWugiWugi(huggywuggy, player);
+            Fight.FightHuggyWuggy(huggywuggy, player);
         }
 
         public void AfterDefeatWugiWugi(Enemy huggywuggy, Player player)

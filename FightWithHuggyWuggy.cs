@@ -4,7 +4,7 @@ namespace StoryLine
 {
     public class FightWithHuggyWuggy
     {
-        public void FightWugiWugi(Enemy huggywuggy, Player player)
+        public void FightHuggyWuggy(Enemy huggywuggy, Player player)
         {         
             while(huggywuggy.Health > 0)
             {                             
