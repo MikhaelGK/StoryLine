@@ -6,7 +6,7 @@ namespace StoryLine
     {
         public static void Main(string[] args)
         {
-            Story story = new Story();
+            BeginningOfTheStory story = new BeginningOfTheStory();
 
             story.Start();                        
         }

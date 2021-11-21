@@ -10,7 +10,7 @@ namespace StoryLine
             {                             
                 var enemySkillActive = EnemySkillChance();            
                 var stringNull = Information(huggywuggy, player, enemySkillActive);
-                if(stringNull == "")
+                if(stringNull == "" || stringNull != "2" && stringNull != "1")
                 {
                     continue;                   
                 }
@@ -83,11 +83,11 @@ namespace StoryLine
                 }
             }
 
-            Story story = new Story();
+            BeginningOfTheStory story = new BeginningOfTheStory();
             Console.Clear();
             Console.WriteLine("                                 You Have Defeated Huggy Wuggy");           
             Console.ReadKey();                
-            story.AfterDefeatWugiWugi(huggywuggy, player);            
+            story.AfterDefeatHuggyWuggy(huggywuggy, player);            
         }
 
         public int EnemyAttackChance()

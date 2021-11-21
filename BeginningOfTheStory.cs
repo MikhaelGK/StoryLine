@@ -2,7 +2,7 @@ using System;
 
 namespace StoryLine
 {
-    public class Story
+    public class BeginningOfTheStory
     {        
         public void Start()
         {
@@ -127,8 +127,7 @@ namespace StoryLine
             {
                 stringNull = repeat.PrepareToGoToTheMountain(player);
             }
-            var yourChoice = Convert.ToInt32(stringNull);                   
-            yourChoice = Convert.ToInt32(stringNull);
+            var yourChoice = Convert.ToInt32(stringNull);            
             if(yourChoice == 1)
             {
                 player.Weapon = "Knife";                                                                
@@ -178,8 +177,10 @@ namespace StoryLine
             Fight.FightHuggyWuggy(huggywuggy, player);
         }
 
-        public void AfterDefeatWugiWugi(Enemy huggywuggy, Player player)
+        public void AfterDefeatHuggyWuggy(Enemy huggywuggy, Player player)
         {
+            RepeatStory repeat = new RepeatStory();
+
             Console.Clear();
             Console.WriteLine("Huggy Wuggy : What happened to me? I was defeated by you?");
             Console.ReadKey();
@@ -189,6 +190,31 @@ namespace StoryLine
             System.Console.WriteLine();
             System.Console.WriteLine("                                  Huggy Wuggy has died...");
             System.Console.WriteLine("             Suddenly, Your body emits light and evolves to form new skills ");                    
+            Console.ReadKey();
+            System.Console.WriteLine();
+            System.Console.WriteLine("Choose your skill : ");
+            System.Console.WriteLine(" 1. Strength Enhance : Enhance your strength by 25 every your skill active");
+            System.Console.WriteLine(" 2. Lifesteal : Heal 50% health every attacked the enemy");
+            System.Console.WriteLine(" 3. Perfect Defense : Immune to every enemy attack");
+            System.Console.Write("");
+            var stringNull = Console.ReadLine();
+            while(stringNull == "" || stringNull != "2" && stringNull != "1" && stringNull != "3")
+            {
+                stringNull = repeat.AfterDefeatHuggyWuggy(player);
+            }
+            var yourChoice = Convert.ToInt32(stringNull);
+            if(yourChoice == 1)
+            {
+                player.Skill = "Strength Enhance : Enhance your strength by 25 every your skill active";
+            }
+            if(yourChoice == 2)
+            {
+                player.Skill = "Lifesteal : Heal 50% health every attacked the enemy";
+            }    
+            if(yourChoice == 3)
+            {
+                player.Skill = "Perfect Defense : Immune to every enemy attack";
+            }                
         }                        
     }   
 }
