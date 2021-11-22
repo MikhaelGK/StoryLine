@@ -8,8 +8,7 @@ namespace StoryLine
         {  
             if(RoyaleMinion.Health <= 0)
             {
-                Story story = new Story();
-                story.AfterDefeatWugiWugi(RoyaleMinion, player);
+                BeginningOfTheStory story = new BeginningOfTheStory();
             }
 
             Console.Clear();

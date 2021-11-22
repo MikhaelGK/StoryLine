@@ -6,7 +6,7 @@ namespace StoryLine
     {
         public string? StoryAfterPlayerName(Player player)
         {
-            var name = player.Name;
+            var name = player.Name; 
             Console.Clear();
             System.Console.WriteLine();            
             System.Console.WriteLine($"Old Man : {name}?? It's a beautiful name");            
