@@ -6,9 +6,9 @@ namespace StoryLine
     {
         public static void Main(string[] args)
         {
-            BeginningOfTheStory story = new BeginningOfTheStory();
+            BeginningOfTheStory beginningOfTheStory = new BeginningOfTheStory();
 
-            story.Start();                        
+            beginningOfTheStory.Start();                        
         }
     }
 }
