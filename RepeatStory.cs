@@ -47,5 +47,18 @@ namespace StoryLine
             var stringNull = Console.ReadLine();
             return stringNull;
         }
+
+        public string? OnArendelleForest(Player player)
+        {
+            Console.Clear();
+            System.Console.WriteLine("Arendelle Forest");
+            System.Console.WriteLine();
+            System.Console.WriteLine("                  You Meet With Old Man Again");
+            System.Console.WriteLine();
+            System.Console.WriteLine("1. Talk To Him");
+            System.Console.WriteLine("2. Ignore Him");
+            var stringNull = Console.ReadLine();  
+            return stringNull;
+        }
     }
 }
