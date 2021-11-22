@@ -7,8 +7,11 @@ namespace StoryLine
         public static void Main(string[] args)
         {
             BeginningOfTheStory beginningOfTheStory = new BeginningOfTheStory();
+            MiddleOfTheStory middleOfTheStory = new MiddleOfTheStory();
+            Player player = new Player();
 
-            beginningOfTheStory.Start();                        
+            beginningOfTheStory.Start(player);                   
+            middleOfTheStory.ContinueChapter(player);
         }
     }
 }

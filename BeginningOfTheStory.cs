@@ -4,7 +4,7 @@ namespace StoryLine
 {
     public class BeginningOfTheStory
     {        
-        public void Start()
+        public void Start(Player player)
         {
             Console.Clear();
             System.Console.WriteLine();
@@ -12,37 +12,38 @@ namespace StoryLine
             System.Console.WriteLine();
             System.Console.WriteLine("                                             Press Start To Continue");
             Console.ReadKey();
-            Prolog();            
+            Prolog(player);            
         }
 
-        public void Prolog()
+        public void Prolog(Player player)
         {
             Console.Clear();
             System.Console.WriteLine("One day, there was a mountain called Mount Sirius which there were many treasures, but there is a dragon guarding the mountain");
             System.Console.WriteLine("          Many warrior have try to get the treasure, but they never come back after go to the mountain");
             System.Console.WriteLine();
-            Console.ReadKey();            
+            Thread.Sleep(2000);            
             System.Console.WriteLine("            You are a very poor person who has been frustrated. One day, you hear about Mount Sirius.");
             System.Console.WriteLine("                               Because you want to be rich, you go to the mountains");
-            Console.ReadKey();                        
-            Main();
+            Console.ReadKey();
+            Main(player);
         }
 
-        public void Main()
+        public void Main(Player player)
         {                       
             Console.Clear();
             System.Console.WriteLine("Morning");
+            Thread.Sleep(3000);
             System.Console.WriteLine();
             System.Console.WriteLine("    You have wake up and go to road. There is a old man that ask your name");
             System.Console.Write("         Enter Your Name : ");            
             var name = Console.ReadLine();
             if(name == null)
-                Main();
+                Main(player);
             else if(name == "")
-                Main();
+                Main(player);
             else
             {
-                Player player = new Player(name);  
+                player.Name = name;
                 StoryAfterPlayerName(player);                              
             }
         }
@@ -55,9 +56,9 @@ namespace StoryLine
             Console.Clear();   
             System.Console.WriteLine();
             System.Console.WriteLine($"Old Man : {name}?? It's a beautiful name");
-            Console.ReadKey();
+            Thread.Sleep(2000);
             System.Console.WriteLine($"Old Man : Have you ever heard about Mount Sirius?");
-            Console.ReadKey();
+            Thread.Sleep(2000);
             System.Console.WriteLine();
             System.Console.WriteLine("1. I have heard about it");
             System.Console.WriteLine("2. No, I never heard of it");
@@ -114,11 +115,12 @@ namespace StoryLine
             RepeatStory repeat = new RepeatStory();
             Console.Clear();
             System.Console.WriteLine("Your Home");
-            Console.ReadKey();
+            Thread.Sleep(3000);
+            System.Console.WriteLine();
             System.Console.WriteLine("                  When you're at home, you prepare your equipment to go to Mount Sirius");
             System.Console.WriteLine("                            Once you are ready, you see the knife and the bow");
             System.Console.WriteLine();
-            Console.ReadKey();
+            Thread.Sleep(2000);
             System.Console.WriteLine("1. Pick up the knife");
             System.Console.WriteLine("2. Pick up the bow");            
             System.Console.Write("");
@@ -133,7 +135,7 @@ namespace StoryLine
                 player.Weapon = "Knife";                                                                
                 System.Console.WriteLine($"                               You pick the {player.Weapon}");
                 player.Damage = 10;
-                Console.ReadKey();
+                Thread.Sleep(3000);
                 GoToTheForest(player);
             }
             if(yourChoice == 2)
@@ -141,7 +143,7 @@ namespace StoryLine
                 player.Weapon = "Bow";
                 System.Console.WriteLine($"                               You pick the {player.Weapon}");
                 player.Damage = 15;
-                Console.ReadKey();
+                Thread.Sleep(3000);
                 GoToTheForest(player);
             }            
         }
@@ -152,10 +154,11 @@ namespace StoryLine
 
             Console.Clear();
             System.Console.WriteLine("Arendelle Forest");
+            Thread.Sleep(3000);
             System.Console.WriteLine();
             System.Console.WriteLine("      When you are in the forest, you meet a wugi-wugi");
             System.Console.WriteLine();
-            Console.ReadKey();
+            Thread.Sleep(2000);
             System.Console.WriteLine("Huggy Wuggy : (laugh) ekk.. ekh.. ");
             Console.ReadKey();
             System.Console.WriteLine("You       : Who the hell are you?");
@@ -190,7 +193,7 @@ namespace StoryLine
             System.Console.WriteLine();
             System.Console.WriteLine("                                  Huggy Wuggy has died...");
             System.Console.WriteLine("             Suddenly, Your body emits light and evolves to form new skills ");                    
-            Console.ReadKey();
+            Thread.Sleep(2000);
             System.Console.WriteLine();
             System.Console.WriteLine("Choose your skill : ");
             System.Console.WriteLine(" 1. Strength Enhance : Enhance your strength by 25 every your skill active");
@@ -206,14 +209,20 @@ namespace StoryLine
             if(yourChoice == 1)
             {
                 player.Skill = "Strength Enhance : Enhance your strength by 25 every your skill active";
+                System.Console.WriteLine();
+                System.Console.WriteLine($"          Your choice is {player.Skill}");
             }
             if(yourChoice == 2)
             {
                 player.Skill = "Lifesteal : Heal 50% health every attacked the enemy";
+                System.Console.WriteLine();
+                System.Console.WriteLine($"          Your choice is {player.Skill}");
             }    
             if(yourChoice == 3)
             {
                 player.Skill = "Perfect Defense : Immune to every enemy attack";
+                System.Console.WriteLine();
+                System.Console.WriteLine($"          Your choice is {player.Skill}");
             }                
         }                        
     }   

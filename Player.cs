@@ -4,9 +4,8 @@ namespace StoryLine
 {
     public class Player : Entity
     {                                      
-        public Player(string name)
-        {
-            Name = name;
+        public Player()
+        {            
             Health = 100;                    
         }        
     }
