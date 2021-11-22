@@ -22,7 +22,7 @@ namespace StoryLine
                     System.Console.WriteLine($"    {huggywuggy.Name} Choose Attack {player.Name}");
                     huggywuggy.Health -= player.Damage;
                     player.Health -= huggywuggy.Damage;
-                    System.Console.WriteLine("      Your Attack Successful");
+                    System.Console.WriteLine("         Your Attack Successful");
                     Thread.Sleep(2000);
                     if(enemySkillActive > 7)
                     {
@@ -39,7 +39,7 @@ namespace StoryLine
                     var defendChange = random.Next(10)+1;
                     if(defendChange > 5)
                     {
-                        System.Console.WriteLine("      Your Defense Failed");
+                        System.Console.WriteLine("         Your Defense Failed");
                         player.Health -= huggywuggy.Damage;                    
                         if(enemySkillActive > 7)
                         {
@@ -50,7 +50,7 @@ namespace StoryLine
                     }
                     if(defendChange <= 5)
                     {
-                        System.Console.WriteLine("      Your Defense Successful");
+                        System.Console.WriteLine("         Your Defense Successful");
                         Thread.Sleep(2000);
                         continue;
                     }
