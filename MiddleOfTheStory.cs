@@ -81,7 +81,7 @@ namespace StoryLine
                 for(int j = 0; j < 3; j++)
                 {
                     Console.Write(".");
-                    Thread.Sleep(1000);
+                    Thread.Sleep(500);
                 }   
             }                
             GoblinComesToYou(player);
@@ -105,63 +105,66 @@ namespace StoryLine
             System.Console.WriteLine("Goblin King : Rest assured hey young man, I will send you to the hell hahahahaa...(Laugh)");
             Console.ReadKey();
             System.Console.WriteLine("Goblin King : My subordinates, kill this young man hahahahaa...(Laugh)");
-        }   
+            Console.ReadKey();
+            Enemy goblin = new Enemy("Goblin", 100, "", "", 2);
+            Enemy elderGoblin = new Enemy("Elder Goblin", 150, "", "Axe", 4);
+            Enemy goblinKing = new Enemy("Goblin King", 500, "Manipulation", "Mace", 7);  
+        }           
 
         public void AfterGoblinKingDead(Player player)
         {
-          Console.Clear();
-          System.Console.WriteLine("                     Finally, You Can Defeat The Goblin King!!");
-          Console.ReadKey();
-          System.Console.WriteLine("                     As a reward for killing the Goblin King, you get weapons for self-defense.");
-          Console.ReadKey();
-          System.Console.WriteLine("                     Choose the weapon you want to claim");
-          System.Console.WriteLine();
-          Thread.Sleep(1000);
-          System.Console.WriteLine("1. Sword");
-          System.Console.WriteLine("2. Chopper");
-          System.Console.WriteLine("3. Polearm");
-          var stringNull = Console.ReadLine();
-          while (stringNull == "" || stringNull != "2" && stringNull != "1" && stringNull != "3")
-          {
-             stringNull = repeat.AfterGoblinKingDead(player); 
-          }
-          var yourChoice = Convert.ToInt32(stringNull);
-          if(yourChoice == 1)
-          {
-              player.Weapon = "Sword";
-              System.Console.WriteLine($"               Your Choice is {player.Weapon}");
-              player.Damage = 25;
-              Thread.Sleep(2000);
+            Console.Clear();
+            System.Console.WriteLine("                                          You Defeat The Goblin King");
+            Thread.Sleep(1000);
+            System.Console.WriteLine("                                      Choose the weapon you want to claim");
+            System.Console.WriteLine();
+            Thread.Sleep(1000);
+            System.Console.WriteLine("1. Sword");
+            System.Console.WriteLine("2. Axe");
+            System.Console.WriteLine("3. Polearm");
+            var stringNull = Console.ReadLine();
+            while (stringNull == "" || stringNull != "2" && stringNull != "1" && stringNull != "3")
+            {
+                stringNull = repeat.AfterGoblinKingDead(player);
+            }
+            var yourChoice = Convert.ToInt32(stringNull);
+            if(yourChoice == 1)
+            {
+                player.Weapon = "Sword";
+                System.Console.WriteLine($"               Your Choice is {player.Weapon}");
+                player.Damage = 25;
+                Thread.Sleep(2000);
 
-          }
-          if(yourChoice == 2)
-          {
-              player.Weapon = "Chopper";
-              System.Console.WriteLine($"               Your Choice is {player.Weapon}");
-              player.Damage = 25;
-              Thread.Sleep(2000);
-          }
-          if(yourChoice == 3)
-          {
-              player.Weapon = "Polearm";
-              System.Console.WriteLine($"               Your Choice is {player.Weapon}");
-              player.Damage = 25;
-              Thread.Sleep(2000);
-          }
+            }
+            if(yourChoice == 2)
+            {
+                player.Weapon = "Axe";
+                System.Console.WriteLine($"               Your Choice is {player.Weapon}");
+                player.Damage = 25;
+                Thread.Sleep(2000);
+            }
+            if(yourChoice == 3)
+            {
+                player.Weapon = "Polearm";
+                System.Console.WriteLine($"               Your Choice is {player.Weapon}");
+                player.Damage = 25;
+                Thread.Sleep(2000);
+            }
+
+            AfterChooseTheWeapon(player);
         }
 
         public void AfterChooseTheWeapon(Player player)
         {
-            System.Console.WriteLine("After that, you follow the path to Mount Sirius.");
+            System.Console.WriteLine("                                      After that, you follow the path to Mount Sirius.");
             System.Console.WriteLine();
             Thread.Sleep(1000);
-
-            System.Console.WriteLine("You    : I feel so tired.");
+            System.Console.WriteLine("You : I feel so tired");
             Console.ReadKey();
-            System.Console.WriteLine("You     : Should I take a break or continue this journey?");
+            System.Console.WriteLine("You : Should I take a break or continue this journey?");
             Console.ReadKey();
-            System.Console.WriteLine("1. Maybe i need to break");
-            System.Console.WriteLine("2. I have to continue this journey");
+            System.Console.WriteLine("1. Take a break");
+            System.Console.WriteLine("2. Continue this journey");
             System.Console.Write("");
             var stringNull = Console.ReadLine();
             while (stringNull == "" || stringNull != "2" && stringNull != "1")
@@ -173,19 +176,16 @@ namespace StoryLine
             if(yourChoice == 1)
             {
                 System.Console.WriteLine();
-                System.Console.WriteLine("You      : Maybe I can sleep here for a while.");
-                Console.ReadKey();
-                System.Console.WriteLine("  *Zzzz... Ngok...*");
-                Console.ReadKey();
+                System.Console.WriteLine("You : Maybe I need to break");
+                Console.ReadKey();                
+                System.Console.WriteLine("                          Zzzz... Ngok...");                
             }
             if(yourChoice == 2)
             {
                 System.Console.WriteLine();
-                System.Console.WriteLine("You       : I can continue this journey");
+                System.Console.WriteLine("You : ack...My head feels so dizzy. I must continue this journey");                
                 Console.ReadKey();
-                System.Console.WriteLine("You       : ack...My head feels so dizzy.");
-                Console.ReadKey();
-                System.Console.WriteLine(" *You passed out* ");
+                System.Console.WriteLine("                          You passed out");
             }
         }
     }
