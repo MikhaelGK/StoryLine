@@ -60,5 +60,40 @@ namespace StoryLine
             var stringNull = Console.ReadLine();  
             return stringNull;
         }
+
+        public void OnArendelleForest(Player player, int yourChoice)
+        {
+             if(yourChoice == 1)
+            {
+                Console.Clear();
+                System.Console.WriteLine();
+                System.Console.WriteLine("You     : Yoo... Old man, What are you doing in here?");
+            }
+            if(yourChoice == 2)
+            {
+                Console.Clear();
+                System.Console.WriteLine();
+                System.Console.WriteLine("Old Man : Yoo.... Young man, Have you ever thought you should say something when old man are around?");
+                Console.ReadKey();
+                System.Console.WriteLine("You     : Sorry, I didn't see you");
+                Console.ReadKey();
+                System.Console.WriteLine("Old Man : I thought you did it on purpose");
+                Console.ReadKey();
+                System.Console.WriteLine("You     : (Laugh)Hahahahaaa.....");
+                Console.ReadKey();
+                System.Console.WriteLine("You     : Alright old man, What are you doing in here?");
+            }
+            Console.ReadKey();
+            System.Console.WriteLine("Old Man : Nothing, Just walking around");
+            Console.ReadKey();
+            System.Console.WriteLine("You     : Well, I thought you in the village");
+            Console.ReadKey();
+            System.Console.WriteLine("Old Man : You know, sometimes people can get bored in the village");
+            Console.ReadKey();
+            System.Console.WriteLine("Old Man : I see you look very good. Did your journey go well?");
+            Console.ReadKey();
+            System.Console.WriteLine("You     : Maybe, not bad for today");
+            Console.ReadKey();
+        }
     }
 }
