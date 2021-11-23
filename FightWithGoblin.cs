@@ -2,112 +2,103 @@ using System;
 
 namespace StoryLine
 {
-    public class FightWithgoblin
+    public class FightWithGoblin
     {
-        public void Fightgoblin(Enemy Goblin, Player player)
-        {
-            Console.Clear();
-            System.Console.WriteLine($"{Goblin.Name}'s Health : {Goblin.Health}");
-            System.Console.WriteLine($"{Goblin.Name}'s Skill  : {Goblin.Skill}");
-            System.Console.WriteLine($"{Goblin.Name}'s Weapon : {Goblin.Weapon}");
-            System.Console.WriteLine();
-            System.Console.WriteLine($"Hp    : {player.Health}");
-            System.Console.WriteLine($"Armor : {player.Armor}");
-            System.Console.WriteLine($"WP    : {player.Weapon}");
-            System.Console.WriteLine();            
-
-            var enemySkillActive = EnemySkillChance();            
-            if(enemySkillActive > 7)            
-                System.Console.WriteLine($"{Goblin.Name}'s Skill activated");
-
-            System.Console.WriteLine("1. Attack");
-            System.Console.WriteLine("2. Defense");                        
-            var stringNull = Console.ReadLine();
-            if(stringNull == "")
-            {
-                Fightgoblin(Goblin, player);
-            }
-            var enemyChoice = EnemyAttackChance();
-            var yourChoice = Convert.ToInt32(stringNull);
-            if (yourChoice == 1 && enemyChoice == 1)
-            {
-                System.Console.WriteLine($"     You Choose Attack {Goblin.Name}");
-                System.Console.WriteLine($"    {Goblin.Name} Choose Attack {player.Name}");
-                Goblin.Health -= player.Damage;
-                player.Health -= Goblin.Damage;
-                System.Console.WriteLine("      Your Attack Successful");
-                Console.ReadKey();
-                if(enemySkillActive > 7)
+        public void FightGoblin(Enemy huggywuggy, Player player)
+        {         
+            Fight fight = new Fight();
+            while(huggywuggy.Health > 0 && player.Health > 0)
+            {                                             
+                var enemySkillActive = fight.EnemySkillChance();            
+                var stringNull = fight.Information(huggywuggy, player, enemySkillActive);
+                if(stringNull == "" || stringNull != "2" && stringNull != "1")
                 {
-                    Goblin.Damage += 1;
+                    continue;                   
                 }
-                Fightgoblin(Goblin, player);                
-            }
-            if (yourChoice == 2 && enemyChoice == 1)
-            {
-                System.Console.WriteLine($"           You Choose Defense");
-                System.Console.WriteLine($"    {Goblin.Name} Choose Attack {player.Name}");
-                Random random = new Random();
-                var defendChange = random.Next(10)+1;
-                if(defendChange > 5)
+                var enemyChoice = fight.EnemyAttackChance();
+                var yourChoice = Convert.ToInt32(stringNull);
+                if (yourChoice == 1 && enemyChoice == 1)
                 {
-                    System.Console.WriteLine("      Your Defense Failed");
-                    player.Health -= Goblin.Damage;                    
+                    System.Console.WriteLine($"     You Choose Attack {huggywuggy.Name}");
+                    System.Console.WriteLine($"    {huggywuggy.Name} Choose Attack {player.Name}");
+                    huggywuggy.Health -= player.Damage;
+                    player.Health -= huggywuggy.Damage;
+                    System.Console.WriteLine("         Your Attack Successful");
+                    Thread.Sleep(2000);
                     if(enemySkillActive > 7)
                     {
-                        Goblin.Damage += 1;
-                    }                    
-                    Console.ReadKey();
-                    Fightgoblin(Goblin, player);
+                        huggywuggy.Damage += 1;
+                    }
+                    continue;
                 }
-                if(defendChange <= 5)
+                if (yourChoice == 2 && enemyChoice == 1)
                 {
-                    System.Console.WriteLine("      Your Defense Successful");
-                    Console.ReadKey();
-                    Fightgoblin(Goblin, player);
+                    System.Console.WriteLine($"           You Choose Defense");
+                    System.Console.WriteLine($"    {huggywuggy.Name} Choose Attack {player.Name}");
+                    Thread.Sleep(2000);
+                    Random random = new Random();
+                    var defendChange = random.Next(10)+1;
+                    if(defendChange > 5)
+                    {
+                        System.Console.WriteLine("         Your Defense Failed");
+                        player.Health -= huggywuggy.Damage;                    
+                        if(enemySkillActive > 7)
+                        {
+                            huggywuggy.Damage += 1;
+                        }                    
+                        Thread.Sleep(2000);
+                        continue;
+                    }
+                    if(defendChange <= 5)
+                    {
+                        System.Console.WriteLine("         Your Defense Successful");
+                        Thread.Sleep(2000);
+                        continue;
+                    }
+                }
+                if(yourChoice == 1 && enemyChoice == 2)
+                {
+                    System.Console.WriteLine($"     You choose attack {huggywuggy.Name}");
+                    System.Console.WriteLine($"     {huggywuggy.Name} choose defend");
+                    Thread.Sleep(2000);
+                    Random random = new Random();
+                    var defendChange = random.Next(10)+1;
+                    if(defendChange > 5)
+                    {
+                        System.Console.WriteLine($"    {huggywuggy.Name} Defense Failed");
+                        huggywuggy.Health -= player.Damage;
+                        Thread.Sleep(2000);
+                        continue;
+                    }
+                    if(defendChange <= 5)
+                    {
+                        System.Console.WriteLine($"      {huggywuggy.Name} Defense Successful");
+                        Thread.Sleep(2000);
+                        continue;
+                    }
+                }
+                if(yourChoice == 2 && enemyChoice == 2)
+                {
+                    System.Console.WriteLine($"     You choose defend");
+                    System.Console.WriteLine($"    {huggywuggy.Name} choose defend");
+                    Thread.Sleep(2000);
+                    continue;
                 }
             }
-            if(yourChoice == 1 && enemyChoice == 2)
+            if(player.Health <= 0)
             {
-                System.Console.WriteLine($"     You choose attack {Goblin.Name}");
-                System.Console.WriteLine($"    {Goblin.Name} choose defend");
-                Random random = new Random();
-                var defendChange = random.Next(10)+1;
-                if(defendChange > 5)
-                {
-                    System.Console.WriteLine($"      {Goblin.Name} Defense Failed");
-                    Goblin.Health -= player.Damage;
-                    Console.ReadKey();                    
-                    Fightgoblin(Goblin, player);
-                }
-                if(defendChange <= 5)
-                {
-                    System.Console.WriteLine($"      {Goblin.Name} Defense Successful");
-                    Console.ReadKey();
-                    Fightgoblin(Goblin, player);
-                }
+                var stringNull = fight.PlayerDied();
+                
             }
-            if(yourChoice == 2 && enemyChoice == 2)
+
+            if(huggywuggy.Health <= 0)
             {
-                System.Console.WriteLine($"     You choose defend");
-                System.Console.WriteLine($"    {Goblin.Name} choose defend");
-                Console.ReadKey();
-                Fightgoblin(Goblin, player);
+                BeginningOfTheStory story = new BeginningOfTheStory();
+                Console.Clear();
+                Console.WriteLine("                                 You Have Defeated Huggy Wuggy");           
+                Console.ReadKey();                
+                story.AfterDefeatHuggyWuggy(huggywuggy, player);            
             }
-        }
-
-        public int EnemyAttackChance()
-        {
-            Random random = new Random();
-            var attackEnemyChance = random.Next(2) + 1;
-            return attackEnemyChance;
-        }        
-
-        public int EnemySkillChance()
-        {
-            Random random = new Random();
-            var enemySkillChance = random.Next(10) + 1;
-            return enemySkillChance;            
         }        
     }
 }

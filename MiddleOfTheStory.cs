@@ -113,6 +113,8 @@ namespace StoryLine
 
         public void AfterGoblinKingDead(Player player)
         {
+            RepeatStory repeat = new RepeatStory();
+
             Console.Clear();
             System.Console.WriteLine("                                          You Defeat The Goblin King");
             Thread.Sleep(1000);
@@ -156,6 +158,8 @@ namespace StoryLine
 
         public void AfterChooseTheWeapon(Player player)
         {
+            RepeatStory repeat = new RepeatStory();
+
             System.Console.WriteLine("                                      After that, you follow the path to Mount Sirius.");
             System.Console.WriteLine();
             Thread.Sleep(1000);
@@ -163,13 +167,14 @@ namespace StoryLine
             Console.ReadKey();
             System.Console.WriteLine("You : Should I take a break or continue this journey?");
             Console.ReadKey();
+            System.Console.WriteLine();
             System.Console.WriteLine("1. Take a break");
             System.Console.WriteLine("2. Continue this journey");
             System.Console.Write("");
             var stringNull = Console.ReadLine();
             while (stringNull == "" || stringNull != "2" && stringNull != "1")
             {
-                stringNull == repeat.AfterChooseTheWeapon(player);
+                stringNull = repeat.AfterChooseTheWeapon(player);
             }
             Console.Clear();
             var yourChoice = Convert.ToInt32(stringNull);
