@@ -2,15 +2,15 @@ using System;
 
 namespace StoryLine
 {
-    public class FightWithGoblin
+    public class FightWithElderGoblin
     {
-        public void FightGoblin(Enemy goblin, Enemy elderGoblin, Enemy goblinKing, Player player)
+        public void FightElderGoblin(Enemy elderGoblin, Enemy goblinKing,Player player)
         {         
             Fight fight = new Fight();
-            while(goblin.Health > 0 && player.Health > 0)
+            while(elderGoblin.Health > 0 && player.Health > 0)
             {                                             
                 var enemySkillActive = fight.EnemySkillChance();            
-                var stringNull = fight.Information(goblin, player, enemySkillActive);
+                var stringNull = fight.Information(elderGoblin, player, enemySkillActive);
                 if(stringNull == "" || stringNull != "2" && stringNull != "1")
                 {
                     continue;                   
@@ -19,32 +19,32 @@ namespace StoryLine
                 var yourChoice = Convert.ToInt32(stringNull);
                 if (yourChoice == 1 && enemyChoice == 1)
                 {
-                    System.Console.WriteLine($"     You Choose Attack {goblin.Name}");
-                    System.Console.WriteLine($"    {goblin.Name} Choose Attack {player.Name}");
-                    goblin.Health -= player.Damage;
-                    player.Health -= goblin.Damage;
+                    System.Console.WriteLine($"     You Choose Attack {elderGoblin.Name}");
+                    System.Console.WriteLine($"    {elderGoblin.Name} Choose Attack {player.Name}");
+                    elderGoblin.Health -= player.Damage;
+                    player.Health -= elderGoblin.Damage;
                     System.Console.WriteLine("         Your Attack Successful");
                     Thread.Sleep(2000);
                     if(enemySkillActive > 7)
                     {
-                        goblin.Damage += 1;
+                        elderGoblin.Damage += 1;
                     }
                     continue;
                 }
                 if (yourChoice == 2 && enemyChoice == 1)
                 {
                     System.Console.WriteLine($"           You Choose Defense");
-                    System.Console.WriteLine($"    {goblin.Name} Choose Attack {player.Name}");
+                    System.Console.WriteLine($"    {elderGoblin.Name} Choose Attack {player.Name}");
                     Thread.Sleep(2000);
                     Random random = new Random();
                     var defendChange = random.Next(10)+1;
                     if(defendChange > 5)
                     {
                         System.Console.WriteLine("         Your Defense Failed");
-                        player.Health -= goblin.Damage;                    
+                        player.Health -= elderGoblin.Damage;                    
                         if(enemySkillActive > 7)
                         {
-                            goblin.Damage += 1;
+                            elderGoblin.Damage += 1;
                         }                    
                         Thread.Sleep(2000);
                         continue;
@@ -58,21 +58,21 @@ namespace StoryLine
                 }
                 if(yourChoice == 1 && enemyChoice == 2)
                 {
-                    System.Console.WriteLine($"     You choose attack {goblin.Name}");
-                    System.Console.WriteLine($"     {goblin.Name} choose defend");
+                    System.Console.WriteLine($"     You choose attack {elderGoblin.Name}");
+                    System.Console.WriteLine($"     {elderGoblin.Name} choose defend");
                     Thread.Sleep(2000);
                     Random random = new Random();
                     var defendChange = random.Next(10)+1;
                     if(defendChange > 5)
                     {
-                        System.Console.WriteLine($"    {goblin.Name} Defense Failed");
-                        goblin.Health -= player.Damage;
+                        System.Console.WriteLine($"    {elderGoblin.Name} Defense Failed");
+                        elderGoblin.Health -= player.Damage;
                         Thread.Sleep(2000);
                         continue;
                     }
                     if(defendChange <= 5)
                     {
-                        System.Console.WriteLine($"      {goblin.Name} Defense Successful");
+                        System.Console.WriteLine($"      {elderGoblin.Name} Defense Successful");
                         Thread.Sleep(2000);
                         continue;
                     }
@@ -80,7 +80,7 @@ namespace StoryLine
                 if(yourChoice == 2 && enemyChoice == 2)
                 {
                     System.Console.WriteLine($"     You choose defend");
-                    System.Console.WriteLine($"    {goblin.Name} choose defend");
+                    System.Console.WriteLine($"    {elderGoblin.Name} choose defend");
                     Thread.Sleep(2000);
                     continue;
                 }
@@ -91,13 +91,13 @@ namespace StoryLine
                 
             }
 
-            if(goblin.Health <= 0)
-            {                
-                FightWithElderGoblin fightElderGoblin = new FightWithElderGoblin();
+            if(elderGoblin.Health <= 0)
+            {               
+                FightWithGoblinKing fightGoblinKing = new FightWithGoblinKing(); 
                 Console.Clear();
-                Console.WriteLine($"                                 You Have Defeated {goblin.Name}");           
+                Console.WriteLine($"                                 You Have Defeated {elderGoblin.Name}");           
                 Console.ReadKey();                
-                fightElderGoblin.FightElderGoblin(elderGoblin, goblinKing, player);            
+                fightGoblinKing.FightGoblinKing(goblinKing, player);            
             }
         }        
     }
