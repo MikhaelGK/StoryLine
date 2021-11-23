@@ -91,11 +91,20 @@ namespace StoryLine
         {            
             System.Console.WriteLine();
             System.Console.WriteLine("                            Suddenly");
-            Thread.Sleep(2000);
+            Thread.Sleep(1000);
             System.Console.WriteLine("                  The goblin king came to you");
             System.Console.WriteLine("                     with his subordinates");
             System.Console.WriteLine();
+            Thread.Sleep(1000);
+            System.Console.WriteLine("Goblin King : Hey young man, be honorable to die by my hand!!!");
             Console.ReadKey();
+            System.Console.WriteLine("You         : Hah?? What do you mean?? Who are you??");
+            Console.ReadKey();
+            System.Console.WriteLine("Goblin King : I'm the king of the goblin. My lord ordered me to kill you");
+            Console.ReadKey();
+            System.Console.WriteLine("Goblin King : Rest assured hey young man, I will send you to the hell hahahahaa...(Laugh)");
+            Console.ReadKey();
+            System.Console.WriteLine("Goblin King : My subordinates, kill this young man hahahahaa...(Laugh)");
         }    
     }
 }
