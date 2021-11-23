@@ -81,7 +81,7 @@ namespace StoryLine
                 for(int j = 0; j < 3; j++)
                 {
                     Console.Write(".");
-                    Thread.Sleep(1000);
+                    Thread.Sleep(500);
                 }   
             }                
             GoblinComesToYou(player);
@@ -105,6 +105,12 @@ namespace StoryLine
             System.Console.WriteLine("Goblin King : Rest assured hey young man, I will send you to the hell hahahahaa...(Laugh)");
             Console.ReadKey();
             System.Console.WriteLine("Goblin King : My subordinates, kill this young man hahahahaa...(Laugh)");
+            Console.ReadKey();
+            Enemy goblin = new Enemy("Goblin", 100, "", "", 2);
+            Enemy elderGoblin = new Enemy("Elder Goblin", 150, "", "Axe", 4);
+            Enemy goblinKing = new Enemy("Goblin King", 500, "Manipulation", "Mace", 7);  
+
+
         }    
     }
 }

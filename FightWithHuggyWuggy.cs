@@ -6,15 +6,16 @@ namespace StoryLine
     {
         public void FightHuggyWuggy(Enemy huggywuggy, Player player)
         {         
+            Fight fight = new Fight();
             while(huggywuggy.Health > 0 && player.Health > 0)
             {                                             
-                var enemySkillActive = EnemySkillChance();            
-                var stringNull = Information(huggywuggy, player, enemySkillActive);
+                var enemySkillActive = fight.EnemySkillChance();            
+                var stringNull = fight.Information(huggywuggy, player, enemySkillActive);
                 if(stringNull == "" || stringNull != "2" && stringNull != "1")
                 {
                     continue;                   
                 }
-                var enemyChoice = EnemyAttackChance();
+                var enemyChoice = fight.EnemyAttackChance();
                 var yourChoice = Convert.ToInt32(stringNull);
                 if (yourChoice == 1 && enemyChoice == 1)
                 {
@@ -86,7 +87,7 @@ namespace StoryLine
             }
             if(player.Health <= 0)
             {
-                var stringNull = PlayerDied();
+                var stringNull = fight.PlayerDied();
                 
             }
 
@@ -98,55 +99,6 @@ namespace StoryLine
                 Console.ReadKey();                
                 story.AfterDefeatHuggyWuggy(huggywuggy, player);            
             }
-        }
-
-        public int EnemyAttackChance()
-        {
-            Random random = new Random();
-            var attackEnemyChance = random.Next(2) + 1;
-            return attackEnemyChance;
         }        
-
-        public int EnemySkillChance()
-        {
-            Random random = new Random();
-            var enemySkillChance = random.Next(10) + 1;
-            return enemySkillChance;            
-        }        
-
-        public string? Information(Enemy huggywuggy, Player player, int enemySkillActive)
-        {
-            Console.Clear();
-            System.Console.WriteLine($"{huggywuggy.Name}'s Health : {huggywuggy.Health}");
-            System.Console.WriteLine($"{huggywuggy.Name}'s Skill  : {huggywuggy.Skill}");
-            System.Console.WriteLine($"{huggywuggy.Name}'s Weapon : {huggywuggy.Weapon}");
-            System.Console.WriteLine();
-            System.Console.WriteLine($"Hp    : {player.Health}");
-            System.Console.WriteLine($"Armor : {player.Armor}");
-            System.Console.WriteLine($"WP    : {player.Weapon}");
-            System.Console.WriteLine();            
-                    
-            if(enemySkillActive > 7)            
-                System.Console.WriteLine($"{huggywuggy.Name}'s Skill activated");
-
-            System.Console.WriteLine("1. Attack");
-            System.Console.WriteLine("2. Defense");                        
-            var stringNull = Console.ReadLine();
-            return stringNull;
-        }
-
-        public string? PlayerDied()
-        {
-            Console.Clear();
-            System.Console.WriteLine();
-            System.Console.WriteLine("                       You Died");
-            Thread.Sleep(5000);
-            Console.Clear();         
-            System.Console.WriteLine();   
-            System.Console.WriteLine("                 Do You Want To Restart?");
-            System.Console.WriteLine("                 1. Yes           2.No");
-            var stringNull = Console.ReadLine();
-            return stringNull;
-        }
     }
 }
