@@ -159,7 +159,8 @@ namespace StoryLine
         public void AfterChooseTheWeapon(Player player)
         {
             RepeatStory repeat = new RepeatStory();
-
+            
+            Console.Clear();
             System.Console.WriteLine("                                      After that, you follow the path to Mount Sirius.");
             System.Console.WriteLine();
             Thread.Sleep(1000);
@@ -186,6 +187,32 @@ namespace StoryLine
                 System.Console.WriteLine("                          Zzzz... Ngok...");
                 Thread.Sleep(1000);
                 System.Console.WriteLine("                          You Fall Asleep");                                
+            }
+            if(yourChoice == 2)
+            {
+                System.Console.WriteLine();
+                System.Console.WriteLine("You : ack...My head feels so dizzy. I must continue this journey");                
+                Console.ReadKey();
+                System.Console.WriteLine("                       On the road, You fainted");                
+            }
+        }
+
+        public void MeetWithRoyaleMinion(Player player)
+        {
+           Console.Clear();
+           var yourChoice = Convert.ToInt32(stringNull);
+            if(yourChoice == 1)
+            {
+                System.Console.WriteLine();
+                System.Console.WriteLine("You : Maybe I need to break");
+                Console.ReadKey();                
+                System.Console.WriteLine("                          Zzzz... Ngok...");
+                Thread.Sleep(1000);
+                System.Console.WriteLine("                          You Fall Asleep");  
+                Console.ReadKey(); 
+                System.Console.WriteLine("After you wake up, you energy is filled.");
+                Console.ReadKey()
+                System.Console.WriteLine("And then you continue your journey to Mount Sirius.");                           
             }
             if(yourChoice == 2)
             {
