@@ -179,28 +179,12 @@ namespace StoryLine
             }
             Console.Clear();
             var yourChoice = Convert.ToInt32(stringNull);
-            if(yourChoice == 1)
-            {
-                System.Console.WriteLine();
-                System.Console.WriteLine("You : Maybe I need to break");
-                Console.ReadKey();                
-                System.Console.WriteLine("                          Zzzz... Ngok...");
-                Thread.Sleep(1000);
-                System.Console.WriteLine("                          You Fall Asleep");                                
-            }
-            if(yourChoice == 2)
-            {
-                System.Console.WriteLine();
-                System.Console.WriteLine("You : ack...My head feels so dizzy. I must continue this journey");                
-                Console.ReadKey();
-                System.Console.WriteLine("                       On the road, You fainted");                
-            }
+            MeetWithRoyaleMinion(player, yourChoice);
         }
 
-        public void MeetWithRoyaleMinion(Player player)
+        public void MeetWithRoyaleMinion(Player player, int yourChoice)
         {
-           Console.Clear();
-           var yourChoice = Convert.ToInt32(stringNull);
+           Console.Clear();           
             if(yourChoice == 1)
             {
                 System.Console.WriteLine();
@@ -211,7 +195,7 @@ namespace StoryLine
                 System.Console.WriteLine("                          You Fall Asleep");  
                 Console.ReadKey(); 
                 System.Console.WriteLine("After you wake up, you energy is filled.");
-                Console.ReadKey()
+                Console.ReadKey();
                 System.Console.WriteLine("And then you continue your journey to Mount Sirius.");                           
             }
             if(yourChoice == 2)
