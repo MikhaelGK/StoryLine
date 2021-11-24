@@ -183,14 +183,16 @@ namespace StoryLine
                 System.Console.WriteLine();
                 System.Console.WriteLine("You : Maybe I need to break");
                 Console.ReadKey();                
-                System.Console.WriteLine("                          Zzzz... Ngok...");                
+                System.Console.WriteLine("                          Zzzz... Ngok...");
+                Thread.Sleep(1000);
+                System.Console.WriteLine("                          You Fall Asleep");                                
             }
             if(yourChoice == 2)
             {
                 System.Console.WriteLine();
                 System.Console.WriteLine("You : ack...My head feels so dizzy. I must continue this journey");                
                 Console.ReadKey();
-                System.Console.WriteLine("                          You passed out");
+                System.Console.WriteLine("                       On the road, You fainted");                
             }
         }
     }
