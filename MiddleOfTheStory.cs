@@ -196,14 +196,56 @@ namespace StoryLine
                 Console.ReadKey(); 
                 System.Console.WriteLine("After you wake up, you energy is filled.");
                 Console.ReadKey();
-                System.Console.WriteLine("And then you continue your journey to Mount Sirius.");                           
+                System.Console.WriteLine("And then you continue your journey to Mount Sirius.");  
+                Console.ReadKey();
+                System.Console.WriteLine("You : Woahm... I fell asleep until midnight. I have to continue this journey.");
+                Console.ReadKey();
+                System.Console.WriteLine("You : This road is very dark."); 
+                Console.ReadKey();
+                System.Console.WriteLine("                       You see the light of fire in the middle of the journey.");
+                Console.ReadKey();              
+                System.Console.WriteLine("Old Man : Help!!!");
+                Console.ReadKey();
+                System.Console.WriteLine("You : Huh, there's someone who's in danger I have to help him.");
+                Console.ReadKey();
+                System.Console.WriteLine("                       You ran towards the source of light and sound earlier.");
+                Console.ReadKey();
+                System.Console.WriteLine("You : Stop! If you want to hurt him, fight me first.");
+                Console.ReadKey();
+                System.Console.WriteLine("Royale Minion : ARRRGGHHH.... Who are you? How dare you challenge me. You don't know who I am?");
+                Console.ReadKey();
+                System.Console.WriteLine("You : You don't need to know who I am and I don't want to know who you are.");
+                Console.ReadKey();
+                System.Console.WriteLine("Royale Minion : Let's fight! Let's prove who is a coward!");
+                Console.ReadKey();
             }
             if(yourChoice == 2)
             {
                 System.Console.WriteLine();
-                System.Console.WriteLine("You : ack...My head feels so dizzy. I must continue this journey");                
+                System.Console.WriteLine("You : Ack...My head feels so dizzy. I must continue this journey");                
                 Console.ReadKey();
-                System.Console.WriteLine("                       On the road, You fainted");                
+                System.Console.WriteLine("                       On the road, You fainted");
+                Console.ReadKey();
+                System.Console.WriteLine("                       You woke up from your fainting. Suddenly you're in a dungeon."); 
+                Console.ReadKey();
+                System.Console.WriteLine("You : Hah!? Where am I? Anyone help me!");
+                Console.ReadKey();
+                System.Console.WriteLine("                       You hear the sound of footsteps.");      
+                Console.ReadKey();
+                System.Console.WriteLine("You : Who's there? ");
+                Console.ReadKey();
+                System.Console.WriteLine("Royale Minion : I am the ruler of this territory. Why did you come here, stranger.");
+                Console.ReadKey();
+                System.Console.WriteLine("You : It's none of your business I came here. Let me go now!");
+                Console.ReadKey();
+                System.Console.WriteLine("Royale Minion : Give me the ransom first. I'll let you go.");
+                Console.ReadKey();
+                System.Console.WriteLine("You : Cunning! If you want, fight with me.");
+                Console.ReadKey();
+                System.Console.WriteLine("Royale Minion : How brave you are! HAHAHAHA I accept your challenge. If you win I will free you, if you lose your treasure or your life will disappear.");
+                Console.ReadKey();
+                System.Console.WriteLine("You : All right, I accept this agreement.");
+                Console.ReadKey();         
             }
         }
     }
