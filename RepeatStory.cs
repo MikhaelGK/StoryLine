@@ -125,5 +125,17 @@ namespace StoryLine
             var stringNull = Console.ReadLine();
             return stringNull;
         }                
+
+        public string? GoblinKingSkillActived()
+        {
+            System.Console.WriteLine("Goblin King : Ack... Please!! Don't kill me!! I'll give all my valuables");
+            Console.ReadKey();
+            System.Console.WriteLine("                              Goblin king took out all the valuables");
+            System.Console.WriteLine("                                     Do you want to take it?");
+            System.Console.WriteLine();
+            System.Console.WriteLine("                                       1) Yes      2) No");
+            var stringNull = Console.ReadLine();
+            return stringNull;
+        }
     }
 }

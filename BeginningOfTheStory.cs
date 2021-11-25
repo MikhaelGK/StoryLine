@@ -150,18 +150,18 @@ namespace StoryLine
 
         public void GoToTheForest(Player player)
         {
-            Enemy huggywuggy = new Enemy("Huggy-Wuggy", 100, "Every hit human will increase his damage by 1", "Wooden Sword", 4);                        
+            Enemy huggywuggy = new Enemy("Huggy Wuggy", 100, "Every hit human will increase his damage by 1", "Wooden Sword", 4);                        
 
             Console.Clear();
             System.Console.WriteLine("Arendelle Forest");
             Thread.Sleep(1000);
             System.Console.WriteLine();
-            System.Console.WriteLine("      When you are in the forest, you meet a wugi-wugi");
+            System.Console.WriteLine($"      When you are in the forest, you meet a {huggywuggy.Name}");
             System.Console.WriteLine();
             Thread.Sleep(1000);
             System.Console.WriteLine("Huggy Wuggy : (laugh) ekk.. ekh.. ");
             Console.ReadKey();
-            System.Console.WriteLine("You       : Who the hell are you?");
+            System.Console.WriteLine("You         : Who the hell are you?");
             Console.ReadKey();
             System.Console.WriteLine("Huggy Wuggy : I'm Huggy Wuggy");
             Console.ReadKey();
@@ -169,6 +169,7 @@ namespace StoryLine
             Console.ReadKey();
             System.Console.WriteLine("Huggy Wuggy : Have you ready to died in here? (laugh)");
             Console.ReadKey();
+            Console.Clear();
             System.Console.WriteLine();
             System.Console.WriteLine("Your Mision : Defeated Huggy Wuggy");            
             System.Console.WriteLine("Huggy Wuggy :");
@@ -176,18 +177,18 @@ namespace StoryLine
             System.Console.WriteLine($"   Skill : {huggywuggy.Skill}");
             Console.ReadKey();
 
-            FightWithHuggyWuggy Fight = new FightWithHuggyWuggy();
-            Fight.FightHuggyWuggy(huggywuggy, player);
+            FightWithHuggyWuggy fight = new FightWithHuggyWuggy();
+            fight.FightHuggyWuggy(huggywuggy, player);
         }
 
-        public void AfterDefeatHuggyWuggy(Enemy huggywuggy, Player player)
+        public void AfterDefeatHuggyWuggy(Player player)
         {
             RepeatStory repeat = new RepeatStory();
 
             Console.Clear();
             Console.WriteLine("Huggy Wuggy : What happened to me? I was defeated by you?");
             Console.ReadKey();
-            Console.WriteLine("Huggy Wuggy : I'm Huggy Wuggy. Why an ordinary human like you beat can me?");
+            Console.WriteLine("Huggy Wuggy : I'm Huggy Wuggy. Why an ordinary human like you can beat me?");
             Console.ReadKey();            
             Console.Clear();
             System.Console.WriteLine();
@@ -197,7 +198,7 @@ namespace StoryLine
             System.Console.WriteLine();
             System.Console.WriteLine("Choose your skill : ");
             System.Console.WriteLine(" 1. Strength Enhance : Enhance your strength by 25 every your skill active");
-            System.Console.WriteLine(" 2. Lifesteal : Heal 50% health every attacked the enemy");
+            System.Console.WriteLine(" 2. Lifesteal : Heals 50% of current health after attack the enemy");
             System.Console.WriteLine(" 3. Perfect Defense : Immune to every enemy attack");
             System.Console.Write("");
             var stringNull = Console.ReadLine();
@@ -214,7 +215,7 @@ namespace StoryLine
             }
             if(yourChoice == 2)
             {
-                player.Skill = "Lifesteal : Heal 50% health every attacked the enemy";
+                player.Skill = "Lifesteal : Heals 50% of current health after attack the enemy";
                 System.Console.WriteLine();
                 System.Console.WriteLine($"          Your choice is {player.Skill}");
             }    
