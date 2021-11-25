@@ -84,9 +84,9 @@ namespace StoryLine
                 System.Console.WriteLine();
                 System.Console.WriteLine("You : Ack...My head feels so dizzy. I must continue this journey");                
                 Console.ReadKey();
-                System.Console.WriteLine("                       On the road, You fainted");
+                System.Console.WriteLine("                       On the road, You passed out");
                 Thread.Sleep(1000);
-                System.Console.WriteLine("                     You woke up from your fainting"); 
+                System.Console.WriteLine("                     You wake up from your fainting"); 
                 Thread.Sleep(1000);
                 System.Console.WriteLine("                      Suddenly you're in a dungeon."); 
                 Thread.Sleep(1000);
@@ -96,18 +96,26 @@ namespace StoryLine
                 Console.ReadKey();
                 System.Console.WriteLine("You : Who's there? ");
                 Console.ReadKey();
-                System.Console.WriteLine("Royale Minion : I am the ruler of this territory. Why did you come here, stranger.");
+                System.Console.WriteLine("                       Suddenly a monster came out from behind the door")
                 Console.ReadKey();
-                System.Console.WriteLine("You : It's none of your business I came here. Let me go now!");
+                System.Console.WriteLine("You : Who the hell are you?? What place is this?? and where is the old man who was with me??");
                 Console.ReadKey();
-                System.Console.WriteLine("Royale Minion : Give me the ransom first. I'll let you go.");
+                System.Console.WriteLine("Royale Minion : Ugh you so noisy, too much question");
                 Console.ReadKey();
-                System.Console.WriteLine("You : Cunning! If you want, fight with me.");
+                System.Console.WriteLine("You : Let me go, you ugly monster!!");
                 Console.ReadKey();
-                System.Console.WriteLine("Royale Minion : How brave you are! HAHAHAHA I accept your challenge. If you win I will free you, if you lose your treasure or your life will disappear.");
+                System.Console.WriteLine("Royale Minion : How dare you call me ugly");
                 Console.ReadKey();
-                System.Console.WriteLine("You : All right, I accept this agreement.");
-                Console.ReadKey();         
+                System.Console.WriteLine("You : What do you want??");
+                Console.ReadKey();  
+                System.Console.WriteLine("Royale Minion : I should be the one asking you, what brought you here?");
+                Console.ReadKey();
+                System.Console.WriteLine("You : it's none of your bussines");
+                Console.ReadKey();
+                System.Console.WriteLine("Royale Minion : Ck, Let's make a deal, fight with me, if you win, I will give you the old man. but, if you lose, you two will become my slaves");
+                Console.ReadKey();
+
+
             }
         }
     }
