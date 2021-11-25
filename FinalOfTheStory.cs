@@ -30,7 +30,8 @@ namespace StoryLine
         }
         public void MeetWithRoyaleMinion(Player player, int yourChoice)
         {
-           Console.Clear();           
+            Enemy royaleMinion = new Enemy("Royale Minion", 2000, "Meteor Ball", "Trisula", 30);
+            Console.Clear();           
             if(yourChoice == 1)
             {
                 System.Console.WriteLine();
