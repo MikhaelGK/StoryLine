@@ -2,100 +2,58 @@ using System;
 
 namespace StoryLine
 {
-    public class FightWithGoblinKing
+    public class FightWithGoblinKing : Fight
     {
         public void FightGoblinKing(Enemy goblinKing, Player player)
-        {         
-            Fight fight = new Fight();
-            while(goblinKing.Health > 10 && player.Health > 0)
-            {                                             
-                var enemySkillActive = fight.EnemySkillChance();            
-                var stringNull = fight.Information(goblinKing, player, enemySkillActive);
-                if(stringNull == "" || stringNull != "2" && stringNull != "1")
-                {
-                    continue;                   
-                }
-                var enemyChoice = fight.EnemyAttackChance();
-                var yourChoice = Convert.ToInt32(stringNull);
-                if (yourChoice == 1 && enemyChoice == 1)
-                {
-                    System.Console.WriteLine($"     You Choose Attack {goblinKing.Name}");
-                    System.Console.WriteLine($"    {goblinKing.Name} Choose Attack {player.Name}");
-                    goblinKing.Health -= player.Damage;
-                    player.Health -= goblinKing.Damage;
-                    System.Console.WriteLine("         Your Attack Successful");
-                    Thread.Sleep(2000);
-                    if(enemySkillActive > 7)
-                    {
-                        goblinKing.Damage += 1;
-                    }
-                    continue;
-                }
-                if (yourChoice == 2 && enemyChoice == 1)
-                {
-                    System.Console.WriteLine($"           You Choose Defense");
-                    System.Console.WriteLine($"    {goblinKing.Name} Choose Attack {player.Name}");
-                    Thread.Sleep(2000);
-                    Random random = new Random();
-                    var defendChange = random.Next(10)+1;
-                    if(defendChange > 5)
-                    {
-                        System.Console.WriteLine("         Your Defense Failed");
-                        player.Health -= goblinKing.Damage;                    
-                        if(enemySkillActive > 7)
-                        {
-                            goblinKing.Damage += 1;
-                        }                    
-                        Thread.Sleep(2000);
-                        continue;
-                    }
-                    if(defendChange <= 5)
-                    {
-                        System.Console.WriteLine("         Your Defense Successful");
-                        Thread.Sleep(2000);
-                        continue;
-                    }
-                }
-                if(yourChoice == 1 && enemyChoice == 2)
-                {
-                    System.Console.WriteLine($"     You choose attack {goblinKing.Name}");
-                    System.Console.WriteLine($"     {goblinKing.Name} choose defend");
-                    Thread.Sleep(2000);
-                    Random random = new Random();
-                    var defendChange = random.Next(10)+1;
-                    if(defendChange > 5)
-                    {
-                        System.Console.WriteLine($"    {goblinKing.Name} Defense Failed");
-                        goblinKing.Health -= player.Damage;
-                        Thread.Sleep(2000);
-                        continue;
-                    }
-                    if(defendChange <= 5)
-                    {
-                        System.Console.WriteLine($"      {goblinKing.Name} Defense Successful");
-                        Thread.Sleep(2000);
-                        continue;
-                    }
-                }
-                if(yourChoice == 2 && enemyChoice == 2)
-                {
-                    System.Console.WriteLine($"     You choose defend");
-                    System.Console.WriteLine($"    {goblinKing.Name} choose defend");
-                    Thread.Sleep(2000);
-                    continue;
-                }
-            }
-            if(player.Health <= 0)
-            {
-                var stringNull = fight.PlayerDied();
-                
-            }
+        {
+            FightEnemy(goblinKing, player);
+            GoblinKingSkillActived(goblinKing, player);
+        }
 
-            if(goblinKing.Health <= 10)
-            {                                
+        public void GoblinKingSkillActived(Enemy goblinKing, Player player)
+        {
+            RepeatStory repeat = new RepeatStory();            
+            System.Console.WriteLine("Goblin King : Ack... Please!! Don't kill me!! I'll give all my valuables");
+            Console.ReadKey();
+            System.Console.WriteLine("                              Goblin king took out all the valuables");
+            System.Console.WriteLine("                                     Do you want to take it?");
+            System.Console.WriteLine();
+            System.Console.WriteLine("                                       1) Yes      2) No");
+            var stringNull = Console.ReadLine();
+            while(stringNull == "" || stringNull != "2" && stringNull != "1")
+            {
+                stringNull = repeat.GoblinKingSkillActived();
+            }
+            var yourChoice = Convert.ToInt32(stringNull);
+            if(yourChoice == 1)
+            {
+                System.Console.WriteLine();              
+                System.Console.WriteLine("                                You take all the valuables");
+                Thread.Sleep(1000);
                 Console.Clear();
-                Console.WriteLine($"                                 You Have Defeated {goblinKing.Name}");           
-                Console.ReadKey();                                         
+                System.Console.WriteLine("                                          Suddenly");
+                Thread.Sleep(1000);
+                System.Console.WriteLine("                            The goblin king stabbed you in the back");
+                Thread.Sleep(1000);
+                System.Console.WriteLine("                                        And you died");
+                Thread.Sleep(500);
+                System.Console.WriteLine("Goblin King : Hahaha.... Very Stupid!!");
+                Console.ReadKey();
+                PlayerDied();
+            }
+            if(yourChoice == 2)
+            {
+                System.Console.WriteLine();                                       
+                System.Console.WriteLine("                        You rejected valuables and then killed the goblin king");                
+                Thread.Sleep(500);
+                System.Console.WriteLine("Goblin King : Noooo.....");
+                Console.ReadKey();
+                Console.Clear();         
+                Console.WriteLine();
+                System.Console.WriteLine("                                 You Have Defeated All Goblin");           
+                System.Console.WriteLine("                                     Your Mision Complete");
+                Console.ReadKey();
+                
             }
         }        
     }

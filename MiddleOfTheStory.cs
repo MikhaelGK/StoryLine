@@ -22,7 +22,7 @@ namespace StoryLine
             System.Console.WriteLine();
             System.Console.WriteLine("                  After The Dragon Ordered The Goblin King");
             System.Console.WriteLine("                          The Dragon Disappear");
-            Thread.Sleep(2000);
+            Console.ReadKey();
             OnArendelleForest(player);            
         }
 
@@ -96,20 +96,44 @@ namespace StoryLine
             System.Console.WriteLine("                     with his subordinates");
             System.Console.WriteLine();
             Thread.Sleep(1000);
-            System.Console.WriteLine("Goblin King : Hey young man, be honorable to die by my hand!!!");
+            System.Console.WriteLine("Goblin King  : Hey young man, be honorable can die in my hand!!!");
             Console.ReadKey();
-            System.Console.WriteLine("You         : Hah?? What do you mean?? Who are you??");
+            System.Console.WriteLine("You          : Hah?? What do you mean?? Who are you??");
             Console.ReadKey();
-            System.Console.WriteLine("Goblin King : I'm the king of the goblin. My lord ordered me to kill you");
+            System.Console.WriteLine("Goblin King  : I'm the king of the goblin. My lord ordered me to kill you");
             Console.ReadKey();
-            System.Console.WriteLine("Goblin King : Rest assured hey young man, I will send you to the hell hahahahaa...(Laugh)");
+            System.Console.WriteLine("Goblin King  : Rest assured hey young man, I will send you to the hell hahahahaa...(Laugh)");
             Console.ReadKey();
-            System.Console.WriteLine("Goblin King : My subordinates, kill this young man hahahahaa...(Laugh)");
+            System.Console.WriteLine("Elder Goblin : My king, How about this old man?");
+            Console.ReadKey();
+            System.Console.WriteLine("Goblin King  : Cook him into our food (laugh)hahahaa...");
+            Console.ReadKey();
+            System.Console.WriteLine("Goblin King  : My subordinates, kill this young man and this old man hahahahaa...(Laugh)");
             Console.ReadKey();
             Enemy goblin = new Enemy("Goblin", 100, "", "", 2);
             Enemy elderGoblin = new Enemy("Elder Goblin", 150, "", "Axe", 4);
             Enemy goblinKing = new Enemy("Goblin King", 500, "Manipulation", "Mace", 7);  
+
+            Console.Clear();
+            System.Console.WriteLine();
+            System.Console.WriteLine("Your Mision : Protect the old man");            
+            System.Console.WriteLine($"{goblin.Name} :");
+            System.Console.WriteLine($"   Damage dealt : {goblin.Damage}");
+            System.Console.WriteLine($"   Skill : -");
+            System.Console.WriteLine();
+            System.Console.WriteLine($"{elderGoblin.Name} :");
+            System.Console.WriteLine($"   Damage dealt : {elderGoblin.Damage}");
+            System.Console.WriteLine($"   Skill : -");
+            System.Console.WriteLine();
+            System.Console.WriteLine($"{goblinKing.Name} :");
+            System.Console.WriteLine($"   Damage dealt : {goblinKing.Damage}");
+            System.Console.WriteLine($"   Skill : {goblinKing.Skill}");
+            Console.ReadKey();
+
+            FightWithGoblin fight = new FightWithGoblin();
+            fight.FightGoblin(goblin, elderGoblin, goblinKing, player);
         }           
+        
 
         public void AfterGoblinKingDead(Player player)
         {
