@@ -8,10 +8,12 @@ namespace StoryLine
         {
             BeginningOfTheStory beginningOfTheStory = new BeginningOfTheStory();
             MiddleOfTheStory middleOfTheStory = new MiddleOfTheStory();
+            FinalOfTheStory finalOfTheStory = new FinalOfTheStory();
             Player player = new Player();
 
             beginningOfTheStory.Start(player);                   
-            middleOfTheStory.ContinueChapter(player);
+            middleOfTheStory.ContinueChapter(player); 
+            finalOfTheStory.AfterChooseTheWeapon(player);           
         }
     }
 }
