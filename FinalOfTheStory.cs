@@ -83,41 +83,49 @@ namespace StoryLine
             if(yourChoice == 2)
             {
                 System.Console.WriteLine();
-                System.Console.WriteLine("You : Ack...My head feels so dizzy. I must continue this journey");                
+                System.Console.WriteLine("You           : Ack...My head feels so dizzy. I must continue this journey");                
                 Console.ReadKey();
                 System.Console.WriteLine("                       On the road, You passed out");
                 Thread.Sleep(1000);
-                System.Console.WriteLine("                     You wake up from your fainting"); 
+                System.Console.WriteLine("                   When You wake up from your fainting"); 
                 Thread.Sleep(1000);
-                System.Console.WriteLine("                      Suddenly you're in a dungeon."); 
+                System.Console.WriteLine("                 You are on the field with your hands tied");
                 Thread.Sleep(1000);
-                System.Console.WriteLine("You : Hah!? Where am I? Anyone help me!");
+                System.Console.WriteLine();
+                System.Console.WriteLine("You           : Hah!? Where am I? Anyone help me!");
                 Console.ReadKey();
-                System.Console.WriteLine("                       You hear the sound of footsteps.");      
+                System.Console.WriteLine("Royale Minion : Finally, you wake up");                        
                 Console.ReadKey();
-                System.Console.WriteLine("You : Who's there? ");
-                Console.ReadKey();
-                System.Console.WriteLine("                       Suddenly a monster came out from behind the door")
-                Console.ReadKey();
-                System.Console.WriteLine("You : Who the hell are you?? What place is this?? and where is the old man who was with me??");
+                System.Console.WriteLine("You           : Who the hell are you?? What place is this?? and where is the old man who was with me??");
                 Console.ReadKey();
                 System.Console.WriteLine("Royale Minion : Ugh you so noisy, too much question");
                 Console.ReadKey();
-                System.Console.WriteLine("You : Let me go, you ugly monster!!");
+                System.Console.WriteLine("You           : Let me go, you ugly monster!!");
                 Console.ReadKey();
-                System.Console.WriteLine("Royale Minion : How dare you call me ugly");
+                System.Console.WriteLine("Royale Minion : How dare you call me ugly. I'm Royale Minion");
                 Console.ReadKey();
-                System.Console.WriteLine("You : What do you want??");
+                System.Console.WriteLine("You           : What do you want??");
                 Console.ReadKey();  
                 System.Console.WriteLine("Royale Minion : I should be the one asking you, what brought you here?");
                 Console.ReadKey();
-                System.Console.WriteLine("You : it's none of your bussines");
+                System.Console.WriteLine("You           : it's none of your bussines");
                 Console.ReadKey();
-                System.Console.WriteLine("Royale Minion : Ck, Let's make a deal, fight with me, if you win, I will give you the old man. but, if you lose, you two will become my slaves");
+                System.Console.WriteLine("Royale Minion : Answer me or I will burn this old man");
                 Console.ReadKey();
-
-
+                System.Console.WriteLine("You           : Please, don't do that!!");
+                Console.ReadKey();
+                System.Console.WriteLine("Royale Minion : Ck, Let's make a deal, fight with me, if you win, I will give you the old man. but, if you lose, I'll eat both of you");
+                Console.ReadKey();
             }
+            Console.Clear();
+            System.Console.WriteLine();
+            System.Console.WriteLine("Your Mision : Save the old man");            
+            System.Console.WriteLine($"{royaleMinion.Name} :");
+            System.Console.WriteLine($"   Damage dealt : {royaleMinion.Damage}");
+            System.Console.WriteLine($"   Skill : {royaleMinion.Skill}");
+            Console.ReadKey();
+            FightWithRoyaleMinion fight = new FightWithRoyaleMinion();
+            fight.FightRoyaleMinion(royaleMinion, player);
         }
 
         public void TheEnd(Player player)
