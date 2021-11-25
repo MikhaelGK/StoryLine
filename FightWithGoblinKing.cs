@@ -39,7 +39,7 @@ namespace StoryLine
                 Thread.Sleep(500);
                 System.Console.WriteLine("Goblin King : Hahaha.... Very Stupid!!");
                 Console.ReadKey();
-                PlayerDied();
+                PlayerDied(player);
             }
             if(yourChoice == 2)
             {

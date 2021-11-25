@@ -26,7 +26,8 @@ namespace StoryLine
                 stringNull = repeat.AfterChooseTheWeapon(player);
             }
             Console.Clear();
-            var yourChoice = Convert.ToInt32(stringNull);            
+            var yourChoice = Convert.ToInt32(stringNull);    
+            MeetWithRoyaleMinion(player, yourChoice);        
         }
         public void MeetWithRoyaleMinion(Player player, int yourChoice)
         {

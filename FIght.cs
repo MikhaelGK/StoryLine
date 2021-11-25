@@ -49,18 +49,16 @@ namespace StoryLine
             return stringNull;
         }
 
-        public string? PlayerDied()
+        public void PlayerDied(Player player)
         {
+            RepeatStory repeat = new RepeatStory();
+
             Console.Clear();
             System.Console.WriteLine();
             System.Console.WriteLine("                       Game Over");
             Console.ReadKey();
-            Console.Clear();         
-            System.Console.WriteLine();   
-            System.Console.WriteLine("                 Do You Want To Restart?");
-            System.Console.WriteLine("                 1. Yes           2.No");
-            var stringNull = Console.ReadLine();
-            return stringNull;
+            BeginningOfTheStory begin = new BeginningOfTheStory();
+            begin.Start(player);
         }
 
         public void FightEnemy(Enemy enemy, Player player)
@@ -169,7 +167,7 @@ namespace StoryLine
             }
             if(player.Health <= 0)
             {
-                var stringNull = PlayerDied();
+                PlayerDied(player);
             }            
         }
     }
