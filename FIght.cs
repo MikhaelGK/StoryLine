@@ -162,6 +162,10 @@ namespace StoryLine
                 {
                     player.Health = 100;
                 }
+                if(enemySkillActive > 7)
+                {
+                    skill.EndEnemySkillAction(enemy);
+                }
             }
             if(player.Health <= 0)
             {
