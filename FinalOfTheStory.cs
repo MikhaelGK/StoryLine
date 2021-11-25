@@ -111,5 +111,25 @@ namespace StoryLine
                 Console.ReadKey();         
             }
         }
+
+        public void TheEnd(Player player)
+        {
+            Console.Clear();
+            System.Console.WriteLine("                          After you kill the royale minion");
+            Thread.Sleep(1000);
+            System.Console.WriteLine("                        The sky turned dark and made a sound");            
+            Thread.Sleep(1000);
+            System.Console.WriteLine();
+            System.Console.WriteLine("You           : Why the sky turn into dark??");
+            Console.ReadKey();
+            System.Console.WriteLine("Unknown Sound : The stanger, I suggest you to leave this forest or I will kill you");            
+            Console.ReadKey();
+            System.Console.WriteLine();
+            System.Console.WriteLine("                        After that, you continue your journey");
+            Thread.Sleep(1000);
+            Console.Clear();
+            System.Console.WriteLine();                                     
+            System.Console.WriteLine("                                      The End");
+        }
     }
 }
